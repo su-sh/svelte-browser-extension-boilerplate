@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "@fullhuman/postcss-purgecss": "^3.0.0",
+    "axios": "^0.21.0",
     "node-sass": "^5.0.0",
     "postcss-custom-properties": "^10.0.0",
     "postcss-import": "^13.0.0",
@@ -37,6 +38,7 @@
     "postcss-preset-env": "^6.7.0",
     "rollup-plugin-copy": "^3.3.0",
     "sirv-cli": "^1.0.0",
-    "svelte-preprocess": "^4.6.1"
+    "svelte-preprocess": "^4.6.1",
+    "svelte-spa-router": "^3.0.5"
   }
 }
