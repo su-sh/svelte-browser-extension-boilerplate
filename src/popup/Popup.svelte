@@ -16,7 +16,7 @@
               Join Time Ticker for free
             </h2>
             <p class="mt-2 text-center text-sm text-gray-600">
-              Stay productive by tracking time effectively.
+              Stay productive by tracking browsing <br>time effectively.
             </p>
           </div>
           <form class="mt-8 space-y-6" action="#" method="POST">

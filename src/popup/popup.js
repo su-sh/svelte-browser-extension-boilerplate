@@ -1,11 +1,11 @@
-import App from "./popup.svelte";
+import Popup from "./Popup.svelte";
 
-const app = new App(
+const popup = new Popup(
   {
     target: document.body,
   }
 )
 
-window.popup = app;
+window.popup = popup;
 
-export default App;
+export default popup;
