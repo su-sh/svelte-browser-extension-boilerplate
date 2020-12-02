@@ -3,22 +3,22 @@
   import { user } from "../stores/store";
   import { push, link } from "svelte-spa-router";
 
-  import Button from '../components/Button.svelte';
-  import Input from '../components/Input.svelte';
+  import Button from "../components/Button.svelte";
+  import Input from "../components/Input.svelte";
+  import { SIGN_UP_PAGE } from "../constants/routes";
 
   let email;
   let password;
 
   async function login() {
-    console.log(email, password)
+    console.log(email, password);
   }
 </script>
 
 <main>
   <div>
     <span>
-      <div
-        class="min-h-screen flex items-center justify-center py-9 px-5">
+      <div class="min-h-screen flex items-center justify-center py-9 px-5">
         <div class="w-full">
           <div>
             <img
@@ -29,14 +29,14 @@
               Welcome back
             </h2>
           </div>
-          <form
-            class="mt-12 space-y-6"
-            on:submit|preventDefault={login}>
+          <form class="mt-12 space-y-6" on:submit|preventDefault={login}>
             <input type="hidden" name="remember" value="true" />
             <div class="rounded-md shadow-sm -space-y-px">
               <div class="mb-6">
                 <div class="mb-2">
-                  <label for="email-address" class="text-base font-medium text-black-500">Email address</label>
+                  <label
+                    for="email-address"
+                    class="text-base font-medium text-black-500">Email address</label>
                 </div>
                 <Input
                   id="email-address"
@@ -49,7 +49,9 @@
               </div>
               <div class="mb-5">
                 <div class="mb-2">
-                  <label for="password" class="text-base font-medium text-black-500">Password</label>
+                  <label
+                    for="password"
+                    class="text-base font-medium text-black-500">Password</label>
                 </div>
                 <Input
                   id="password"
@@ -68,7 +70,7 @@
                 Don't have an account?
                 <span><a
                     class="font-bold text-indigo-600"
-                    href="/"
+                    href={SIGN_UP_PAGE}
                     use:link>Sign up</a></span>
               </p>
             </div>

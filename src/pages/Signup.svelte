@@ -3,8 +3,9 @@
   import { user } from "../stores/store";
   import { push, link } from "svelte-spa-router";
 
-  import Button from '../components/Button.svelte';
-  import Input from '../components/Input.svelte';
+  import Button from "../components/Button.svelte";
+  import Input from "../components/Input.svelte";
+  import { LOGIN_PAGE } from "../constants/routes";
 
   let email;
   let username;
@@ -103,7 +104,7 @@
                 Already have an account?
                 <span><a
                     class="font-bold text-indigo-600"
-                    href="/login"
+                    href={LOGIN_PAGE}
                     use:link>Login</a></span>
               </p>
             </div>
