@@ -1,18 +1,14 @@
 <script>
   import axios from "axios";
-  import { user } from "../stores/store";
   import { push, link } from "svelte-spa-router";
 
+  import { user } from "../stores/store";
   import Button from "../components/Button.svelte";
   import Input from "../components/Input.svelte";
   import { SIGN_UP_PAGE } from "../constants/routes";
 
   let email;
   let password;
-
-  async function login() {
-    console.log(email, password);
-  }
 </script>
 
 <main>
@@ -29,7 +25,7 @@
               Welcome back
             </h2>
           </div>
-          <form class="mt-12 space-y-6" on:submit|preventDefault={login}>
+          <form class="mt-12 space-y-6" on:submit|preventDefault={() => {}}>
             <input type="hidden" name="remember" value="true" />
             <div class="rounded-md shadow-sm -space-y-px">
               <div class="mb-6">
