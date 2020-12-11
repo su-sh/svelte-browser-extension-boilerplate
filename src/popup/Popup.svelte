@@ -1,19 +1,16 @@
 <script>
+  import Router from "svelte-spa-router";
+
+  import Home from "../pages/Home.svelte";
+  import Login from "../pages/Login.svelte";
+  import Signup from "../pages/Signup.svelte";
+  import { LOGIN_PAGE, SIGN_UP_PAGE, HOME } from "../constants/routes";
+
+  const routes = {
+    [SIGN_UP_PAGE]: Signup,
+    [LOGIN_PAGE]: Login,
+    [HOME]: Home,
+  };
 </script>
 
-<main>
-  <div>
-    <span>
-      <img src="images/icon-16.png" alt="Chrome Extension Popup">
-      Chrome Extension Popup
-    </span>
-
-  </div>
-</main>
-
-<style>
-  main {
-    width: 360px;
-    height: 480px;
-  }
-</style>
+<Router {routes} />
