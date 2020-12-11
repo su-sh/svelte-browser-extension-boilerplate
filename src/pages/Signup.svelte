@@ -4,16 +4,14 @@
   import { push } from "svelte-spa-router";
 
   let email;
-  let firstName;
-  let lastName;
+  let displayName;
   let password;
 
   async function signup() {
     try {
       await axios.post("/api/auth/signup", {
         email,
-        firstName,
-        lastName,
+        displayName,
         password,
       });
       $user = data.user;
@@ -21,8 +19,7 @@
     } catch (e) {
       if (e) {
         console.log(e);
-        firstName = "";
-        lastName = "";
+        displayName ="";
         email = "";
         password = "";
       }
@@ -59,7 +56,7 @@
               <div class="pb-4">
                 <label
                   for="email-address"
-                  class="block text-sm font-medium text-gray-700">Email address</label>
+                  class="block text-sm font-medium text-gray-700 pb-1">Email address</label>
                 <input
                   id="email-address"
                   name="email"
@@ -70,43 +67,17 @@
                   class="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                   placeholder="Email address" />
               </div>
-              <div class="flex items-center justify-between pb-4">
-                <div class="mr-2">
-                  <label
-                    for="first_name"
-                    class="block text-sm font-medium text-gray-700">First name</label>
-                  <input
-                    id="first-name"
-                    name="first name"
-                    type="name"
-                    bind:value={firstName}
-                    autocomplete="name"
-                    required
-                    class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                    placeholder="First Name" />
-                </div>
-
-                <div class="ml-2">
-                  <label
-                    for="last_name"
-                    class="block text-sm font-medium text-gray-700">Last name<span
-                      class="pl-2 text-xs text-muted text-gray-400">(optional)</span></label>
-                  <input
-                    id="Last Name"
-                    name="last name"
-                    type="last name"
-                    bind:value={lastName}
-                    autocomplete="name"
-                    required
-                    class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                    placeholder="Last Name" />
-                </div>
+              <div class="pb-4"> 
+                <label
+                  for="display-name"
+                  class="block text-sm font-medium text-gray-700 pb-1">Display Name</label>
+                <input id="password" name="password" type="password" autocomplete="current-password" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" bind:value={displayName} placeholder="Display Name">
               </div>
 
               <div>
                 <label
                   for="password"
-                  class="block text-sm font-medium text-gray-700">Password</label>
+                  class="block text-sm font-medium text-gray-700 pb-1">Password</label>
                 <input
                   id="password"
                   name="password"
