@@ -18,7 +18,6 @@
       push("/home");
     } catch (e) {
       if (e) {
-        console.log(e);
         displayName = "";
         email = "";
         password = "";
