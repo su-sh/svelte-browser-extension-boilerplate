@@ -31,6 +31,7 @@
   "dependencies": {
     "@fullhuman/postcss-purgecss": "^3.0.0",
     "axios": "^0.21.0",
+    "localStorage": "^1.0.4",
     "node-sass": "^5.0.0",
     "postcss-custom-properties": "^10.0.0",
     "postcss-import": "^13.0.0",
